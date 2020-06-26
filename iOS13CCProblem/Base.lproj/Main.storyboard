@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS13CCProblem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlZ-3k-rJw">
+                                <rect key="frame" x="24" y="90" width="366" height="30"/>
+                                <state key="normal" title="Open AVPlayerVC"/>
+                                <connections>
+                                    <segue destination="Tm0-cd-P06" kind="presentation" id="Szz-Lg-NN0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7J-cw-66i">
+                                <rect key="frame" x="24" y="144" width="366" height="30"/>
+                                <state key="normal" title="Open VC With Embedded AVPlayer"/>
+                                <connections>
+                                    <segue destination="DLF-sx-s1c" kind="presentation" modalPresentationStyle="overFullScreen" id="84P-gp-QnS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="v7J-cw-66i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="8NO-0u-xkc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LlZ-3k-rJw" secondAttribute="trailing" constant="24" id="T4T-yw-m2p"/>
+                            <constraint firstItem="LlZ-3k-rJw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="UMZ-58-yGt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v7J-cw-66i" secondAttribute="trailing" constant="24" id="hNA-AK-5Jh"/>
+                            <constraint firstItem="v7J-cw-66i" firstAttribute="top" secondItem="LlZ-3k-rJw" secondAttribute="bottom" constant="24" id="tyv-I5-Xtx"/>
+                            <constraint firstItem="LlZ-3k-rJw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="ush-m0-MgS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="-169"/>
+        </scene>
+        <!--EmbedAV Player View Controller-->
+        <scene sceneID="NKg-bp-NUH">
+            <objects>
+                <viewController id="DLF-sx-s1c" customClass="EmbedAVPlayerViewController" customModule="iOS13CCProblem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eP7-f7-Lam">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OrU-Rg-jYe">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4Z-Mc-fkH">
+                                <rect key="frame" x="12" y="56" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8q3-Pk-n4F"/>
+                                    <constraint firstAttribute="height" constant="60" id="jea-Ey-UK4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDismissTap:" destination="DLF-sx-s1c" eventType="touchUpInside" id="ZL4-Qv-JXQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OrU-Rg-jYe" firstAttribute="centerY" secondItem="vir-jl-H9E" secondAttribute="centerY" id="G35-Zo-i3x"/>
+                            <constraint firstItem="OrU-Rg-jYe" firstAttribute="centerX" secondItem="vir-jl-H9E" secondAttribute="centerX" id="RfI-Vx-bU6"/>
+                            <constraint firstItem="D4Z-Mc-fkH" firstAttribute="leading" secondItem="vir-jl-H9E" secondAttribute="leading" constant="12" id="ng2-uk-ZAB"/>
+                            <constraint firstItem="D4Z-Mc-fkH" firstAttribute="top" secondItem="vir-jl-H9E" secondAttribute="top" constant="12" id="nuz-LS-VX8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vir-jl-H9E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XU2-ML-4gw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889.85507246376824" y="-512.27678571428567"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="YP8-EM-8h2">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fV6-J6-xZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Tm0-cd-P06" customClass="PlayerViewController" customModule="iOS13CCProblem" customModuleProvider="target" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="139"/>
+        </scene>
+    </scenes>
+</document>
